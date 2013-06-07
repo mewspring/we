@@ -29,7 +29,7 @@ type MousePress struct {
 	image.Point
 	// Mouse button that was pressed.
 	Button Button
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
 
@@ -39,7 +39,7 @@ type MouseRelease struct {
 	image.Point
 	// Mouse button that was released.
 	Button Button
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
 
@@ -60,7 +60,7 @@ type MouseDrag struct {
 	From image.Point
 	// Mouse button that was held down.
 	Button Button
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
 
@@ -68,7 +68,7 @@ type MouseDrag struct {
 type ScrollUp struct {
 	// Scroll offset.
 	Off int
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
 
@@ -76,6 +76,6 @@ type ScrollUp struct {
 type ScrollDown struct {
 	// Scroll offset.
 	Off int
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }

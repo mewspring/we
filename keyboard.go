@@ -1,17 +1,17 @@
 package we
 
-// Mod corresponds to a bitfield of modifier key flags.
+// Mod corresponds to a bitfield of modifier keys.
 type Mod int
 
-// Modifier key flags.
+// Modifier key bitfield values.
 const (
-	// The ModControl bit is set if one or more Control keys were held down.
+	// ModControl means one or more Control keys were held down.
 	ModControl Mod = 1 << iota
-	// The ModShift bit is set if one or more Shift keys were held down.
+	// ModShift means one or more Shift keys were held down.
 	ModShift
-	// The ModAlt bit is set if one or more Alt keys were held down.
+	// ModAlt means one or more Alt keys were held down.
 	ModAlt
-	// The ModSuper bit is set if one or more Super keys were held down.
+	// ModSuper means one or more Super keys were held down.
 	ModSuper
 )
 
@@ -157,7 +157,7 @@ const (
 type KeyPress struct {
 	// Keyboard key.
 	Key Key
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
 
@@ -165,7 +165,7 @@ type KeyPress struct {
 type KeyRelease struct {
 	// Keyboard key.
 	Key Key
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
 
@@ -173,6 +173,6 @@ type KeyRelease struct {
 type KeyRepeat struct {
 	// Keyboard key.
 	Key Key
-	// Bitfield of modifier key flags.
+	// Bitfield of modifier keys.
 	Mods Mod
 }
