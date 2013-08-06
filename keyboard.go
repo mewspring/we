@@ -169,10 +169,7 @@ type KeyRelease struct {
 	Mods Mod
 }
 
-// KeyRepeat is triggered when a keyboard key was held down until it repeated.
-type KeyRepeat struct {
-	// Keyboard key.
-	Key Key
-	// Bitfield of modifier keys.
-	Mods Mod
-}
+// KeyRune is triggered when a unicode character is typed on the keyboard. For
+// instance if `a` and `shift` are held down on the keyboard KeyRune will
+// correspond to 'A'.
+type KeyRune rune
