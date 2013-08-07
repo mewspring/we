@@ -1,5 +1,9 @@
 package we
 
+import (
+	"fmt"
+)
+
 // Mod corresponds to a bitfield of modifier keys.
 type Mod int
 
@@ -153,6 +157,94 @@ const (
 	KeyMenu         Key = 348
 )
 
+// keyNames maps from Key value to string description.
+var keyNames = map[Key]string{
+	KeySpace:        "[space]",
+	KeyWorld1:       "[world 1]",
+	KeyWorld2:       "[world 2]",
+	KeyEscape:       "[escape]",
+	KeyEnter:        "[enter]",
+	KeyTab:          "[tab]",
+	KeyBackspace:    "[backspace]",
+	KeyInsert:       "[insert]",
+	KeyDelete:       "[delete]",
+	KeyRight:        "[right]",
+	KeyLeft:         "[left]",
+	KeyDown:         "[down]",
+	KeyUp:           "[up]",
+	KeyPageUp:       "[page up]",
+	KeyPageDown:     "[page down]",
+	KeyHome:         "[home]",
+	KeyEnd:          "[end]",
+	KeyCapsLock:     "[caps lock]",
+	KeyScrollLock:   "[scroll lock]",
+	KeyNumLock:      "[num lock]",
+	KeyPrintScreen:  "[print screen]",
+	KeyPause:        "[pause]",
+	KeyF1:           "[f1]",
+	KeyF2:           "[f2]",
+	KeyF3:           "[f3]",
+	KeyF4:           "[f4]",
+	KeyF5:           "[f5]",
+	KeyF6:           "[f6]",
+	KeyF7:           "[f7]",
+	KeyF8:           "[f8]",
+	KeyF9:           "[f9]",
+	KeyF10:          "[f10]",
+	KeyF11:          "[f11]",
+	KeyF12:          "[f12]",
+	KeyF13:          "[f13]",
+	KeyF14:          "[f14]",
+	KeyF15:          "[f15]",
+	KeyF16:          "[f16]",
+	KeyF17:          "[f17]",
+	KeyF18:          "[f18]",
+	KeyF19:          "[f19]",
+	KeyF20:          "[f20]",
+	KeyF21:          "[f21]",
+	KeyF22:          "[f22]",
+	KeyF23:          "[f23]",
+	KeyF24:          "[f24]",
+	KeyF25:          "[f25]",
+	KeyKp0:          "[kp 0]",
+	KeyKp1:          "[kp 1]",
+	KeyKp2:          "[kp 2]",
+	KeyKp3:          "[kp 3]",
+	KeyKp4:          "[kp 4]",
+	KeyKp5:          "[kp 5]",
+	KeyKp6:          "[kp 6]",
+	KeyKp7:          "[kp 7]",
+	KeyKp8:          "[kp 8]",
+	KeyKp9:          "[kp 9]",
+	KeyKpDecimal:    "[kp decimal]",
+	KeyKpDivide:     "[kp divide]",
+	KeyKpMultiply:   "[kp multiply]",
+	KeyKpSubtract:   "[kp subtract]",
+	KeyKpAdd:        "[kp add]",
+	KeyKpEnter:      "[kp enter]",
+	KeyKpEqual:      "[kp equal]",
+	KeyLeftShift:    "[left shift]",
+	KeyLeftControl:  "[left control]",
+	KeyLeftAlt:      "[left alt]",
+	KeyLeftSuper:    "[left super]",
+	KeyRightShift:   "[right shift]",
+	KeyRightControl: "[right control]",
+	KeyRightAlt:     "[right alt]",
+	KeyRightSuper:   "[right super]",
+	KeyMenu:         "[menu]",
+}
+
+func (key Key) String() string {
+	s, ok := keyNames[key]
+	if ok {
+		return s
+	}
+	if key >= KeyApostrophe && key <= KeyGraveAccent {
+		return string(key)
+	}
+	return fmt.Sprintf("[unknown key: %d]", int(key))
+}
+
 // KeyPress is triggered when a keyboard key is pressed.
 type KeyPress struct {
 	// Keyboard key.
@@ -163,6 +255,14 @@ type KeyPress struct {
 
 // KeyRelease is triggered when a keyboard key is released.
 type KeyRelease struct {
+	// Keyboard key.
+	Key Key
+	// Bitfield of modifier keys.
+	Mods Mod
+}
+
+// KeyRepeat is triggered when a keyboard key was held down until it repeated.
+type KeyRepeat struct {
 	// Keyboard key.
 	Key Key
 	// Bitfield of modifier keys.
