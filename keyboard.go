@@ -2,6 +2,7 @@ package we
 
 import (
 	"fmt"
+	"strings"
 )
 
 // Mod corresponds to a bitfield of modifier keys.
@@ -18,6 +19,26 @@ const (
 	// ModSuper means one or more Super keys were held down.
 	ModSuper
 )
+
+func (mod Mod) String() string {
+	if mod == 0 {
+		return ""
+	}
+	var mods []string
+	if mod&ModControl != 0 {
+		mods = append(mods, "control")
+	}
+	if mod&ModShift != 0 {
+		mods = append(mods, "shift")
+	}
+	if mod&ModAlt != 0 {
+		mods = append(mods, "alt")
+	}
+	if mod&ModSuper != 0 {
+		mods = append(mods, "super")
+	}
+	return "[" + strings.Join(mods, "+") + "]"
+}
 
 // Key corresponds to a keyboard key.
 type Key int
@@ -250,7 +271,7 @@ type KeyPress struct {
 	// Keyboard key.
 	Key Key
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // KeyRelease is triggered when a keyboard key is released.
@@ -258,7 +279,7 @@ type KeyRelease struct {
 	// Keyboard key.
 	Key Key
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // KeyRepeat is triggered when a keyboard key was held down until it repeated.
@@ -266,7 +287,7 @@ type KeyRepeat struct {
 	// Keyboard key.
 	Key Key
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // KeyRune is triggered when a unicode character is typed on the keyboard. For
