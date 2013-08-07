@@ -1,4 +1,3 @@
-// Package we specifies the types and constants commonly used for window events.
 package we
 
 import (
@@ -63,6 +62,10 @@ type MouseDrag struct {
 	// Bitfield of modifier keys.
 	Mods Mod
 }
+
+// MouseEnter is triggered when the mouse enters or leaves the window. On mouse
+// enter the value is true, otherwise it is false.
+type MouseEnter bool
 
 // ScrollUp is triggered when the mouse wheel is scrolled upwards.
 type ScrollUp struct {
