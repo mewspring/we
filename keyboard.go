@@ -9,10 +9,10 @@ type Mod int
 
 // Modifier key bitfield values.
 const (
-	// ModControl means one or more Control keys were held down.
-	ModControl Mod = 1 << iota
 	// ModShift means one or more Shift keys were held down.
-	ModShift
+	ModShift Mod = 1 << iota
+	// ModControl means one or more Control keys were held down.
+	ModControl
 	// ModAlt means one or more Alt keys were held down.
 	ModAlt
 	// ModSuper means one or more Super keys were held down.
