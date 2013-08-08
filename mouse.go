@@ -19,6 +19,7 @@ const (
 	Button7
 	Button8
 
+	// Aliases.
 	ButtonLeft   = Button1
 	ButtonRight  = Button2
 	ButtonMiddle = Button3
@@ -83,6 +84,13 @@ type MouseDrag struct {
 // MouseEnter is triggered when the mouse enters or leaves the window. On mouse
 // enter the value is true, otherwise it is false.
 type MouseEnter bool
+
+func (enter MouseEnter) String() string {
+	if enter {
+		return "enter"
+	}
+	return "leave"
+}
 
 // ScrollUp is triggered when the mouse wheel is scrolled upwards.
 type ScrollUp struct {
