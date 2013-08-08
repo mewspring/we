@@ -1,6 +1,7 @@
 package we
 
 import (
+	"fmt"
 	"image"
 )
 
@@ -22,6 +23,21 @@ const (
 	ButtonRight  = Button2
 	ButtonMiddle = Button3
 )
+
+// buttonNames maps from Button value to string description.
+var buttonNames = map[Button]string{
+	ButtonLeft:   "[left button]",
+	ButtonRight:  "[right button]",
+	ButtonMiddle: "[middle button]",
+}
+
+func (button Button) String() string {
+	s, ok := buttonNames[button]
+	if ok {
+		return s
+	}
+	return fmt.Sprintf("[button %d]", int(button)+1)
+}
 
 // MousePress is triggered when a mouse button is pressed.
 type MousePress struct {
