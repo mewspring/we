@@ -17,6 +17,7 @@ const (
 	Button6
 	Button7
 	Button8
+
 	ButtonLeft   = Button1
 	ButtonRight  = Button2
 	ButtonMiddle = Button3
@@ -29,7 +30,7 @@ type MousePress struct {
 	// Mouse button that was pressed.
 	Button Button
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // MouseRelease is triggered when a mouse button is released.
@@ -39,7 +40,7 @@ type MouseRelease struct {
 	// Mouse button that was released.
 	Button Button
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // MouseMove is triggered when the mouse is moved from one location to another.
@@ -60,7 +61,7 @@ type MouseDrag struct {
 	// Mouse button that was held down.
 	Button Button
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // MouseEnter is triggered when the mouse enters or leaves the window. On mouse
@@ -72,7 +73,7 @@ type ScrollUp struct {
 	// Scroll offset.
 	Off int
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
 
 // ScrollDown is triggered when the mouse wheel is scrolled downwards.
@@ -80,5 +81,5 @@ type ScrollDown struct {
 	// Scroll offset.
 	Off int
 	// Bitfield of modifier keys.
-	Mods Mod
+	Mod Mod
 }
