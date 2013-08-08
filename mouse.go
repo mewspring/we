@@ -92,17 +92,17 @@ func (enter MouseEnter) String() string {
 	return "leave"
 }
 
-// ScrollUp is triggered when the mouse wheel is scrolled upwards.
-type ScrollUp struct {
-	// Scroll offset.
+// ScrollX is triggered when the mouse wheel is scrolled on the horizontal axis.
+type ScrollX struct {
+	// Horizontal scroll offset.
 	Off int
 	// Bitfield of modifier keys.
 	Mod Mod
 }
 
-// ScrollDown is triggered when the mouse wheel is scrolled downwards.
-type ScrollDown struct {
-	// Scroll offset.
+// ScrollY is triggered when the mouse wheel is scrolled on the vertical axis.
+type ScrollY struct {
+	// Vertical scroll offset.
 	Off int
 	// Bitfield of modifier keys.
 	Mod Mod
