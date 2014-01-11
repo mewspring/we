@@ -50,6 +50,11 @@ type MousePress struct {
 	Mod Mod
 }
 
+func (e MousePress) String() string {
+	// Override the embedded String method of image.Point.
+	return fmt.Sprintf("{%v %v %v}", e.Point, e.Button, e.Mod)
+}
+
 // MouseRelease is triggered when a mouse button is released.
 type MouseRelease struct {
 	// Coordinates of the mouse cursor.
@@ -60,12 +65,22 @@ type MouseRelease struct {
 	Mod Mod
 }
 
+func (e MouseRelease) String() string {
+	// Override the embedded String method of image.Point.
+	return fmt.Sprintf("{%v %v %v}", e.Point, e.Button, e.Mod)
+}
+
 // MouseMove is triggered when the mouse is moved from one location to another.
 type MouseMove struct {
 	// Coordinates of the mouse cursor.
 	image.Point
 	// Coordinates of the mouse cursor at the beginning of the move event.
 	From image.Point
+}
+
+func (e MouseMove) String() string {
+	// Override the embedded String method of image.Point.
+	return fmt.Sprintf("{%v %v}", e.Point, e.From)
 }
 
 // MouseDrag is triggered when the mouse is moved from one location to another

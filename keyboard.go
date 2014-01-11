@@ -52,7 +52,6 @@ type Key int
 // [1]: http://www.usb.org/developers/devclass_docs/Hut1_12v2.pdf
 const (
 	// Printable keys.
-
 	KeySpace        Key = 32
 	KeyApostrophe   Key = 39 // '
 	KeyComma        Key = 44 // ,
@@ -105,7 +104,6 @@ const (
 	KeyWorld2       Key = 162 // non-US #2
 
 	// Function keys.
-
 	KeyEscape       Key = 256
 	KeyEnter        Key = 257
 	KeyTab          Key = 258
