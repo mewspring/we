@@ -96,6 +96,11 @@ type MouseDrag struct {
 	Mod Mod
 }
 
+func (e MouseDrag) String() string {
+	// Override the embedded String method of image.Point.
+	return fmt.Sprintf("{%v %v %v %v}", e.Point, e.From, e.Button, e.Mod)
+}
+
 // MouseEnter is triggered when the mouse enters or leaves the window. On mouse
 // enter the value is true, otherwise it is false.
 type MouseEnter bool
