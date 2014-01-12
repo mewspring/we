@@ -292,3 +292,7 @@ type KeyRepeat struct {
 // instance if `a` and `shift` are held down on the keyboard KeyRune will
 // correspond to 'A'.
 type KeyRune rune
+
+func (r KeyRune) String() string {
+	return string(r)
+}
