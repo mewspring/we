@@ -40,7 +40,7 @@ func (button Button) String() string {
 	return fmt.Sprintf("[button %d]", int(button)+1)
 }
 
-// MousePress is triggered when a mouse button is pressed.
+// A MousePress event is triggered when a mouse button is pressed.
 type MousePress struct {
 	// Coordinates of the mouse cursor.
 	image.Point
@@ -55,7 +55,7 @@ func (e MousePress) String() string {
 	return fmt.Sprintf("{%v %v %v}", e.Point, e.Button, e.Mod)
 }
 
-// MouseRelease is triggered when a mouse button is released.
+// A MouseRelease event is triggered when a mouse button is released.
 type MouseRelease struct {
 	// Coordinates of the mouse cursor.
 	image.Point
@@ -70,7 +70,8 @@ func (e MouseRelease) String() string {
 	return fmt.Sprintf("{%v %v %v}", e.Point, e.Button, e.Mod)
 }
 
-// MouseMove is triggered when the mouse is moved from one location to another.
+// A MouseMove event is triggered when the mouse is moved from one location to
+// another.
 type MouseMove struct {
 	// Coordinates of the mouse cursor.
 	image.Point
@@ -83,8 +84,8 @@ func (e MouseMove) String() string {
 	return fmt.Sprintf("{%v %v}", e.Point, e.From)
 }
 
-// MouseDrag is triggered when the mouse is moved from one location to another
-// while a mouse button is held down.
+// A MouseDrag event is triggered when the mouse is moved from one location to
+// another while a mouse button is held down.
 type MouseDrag struct {
 	// Coordinates of the mouse cursor.
 	image.Point
@@ -101,8 +102,8 @@ func (e MouseDrag) String() string {
 	return fmt.Sprintf("{%v %v %v %v}", e.Point, e.From, e.Button, e.Mod)
 }
 
-// MouseEnter is triggered when the mouse enters or leaves the window. On mouse
-// enter the value is true, otherwise it is false.
+// A MouseEnter event is triggered when the mouse enters or leaves the window.
+// On mouse enter the value is true, otherwise it is false.
 type MouseEnter bool
 
 func (enter MouseEnter) String() string {
@@ -112,7 +113,8 @@ func (enter MouseEnter) String() string {
 	return "leave"
 }
 
-// ScrollX is triggered when the mouse wheel is scrolled on the horizontal axis.
+// A ScrollX event is triggered when the mouse wheel is scrolled on the
+// horizontal axis.
 type ScrollX struct {
 	// Horizontal scroll offset.
 	Off int
@@ -120,7 +122,8 @@ type ScrollX struct {
 	Mod Mod
 }
 
-// ScrollY is triggered when the mouse wheel is scrolled on the vertical axis.
+// A ScrollY event is triggered when the mouse wheel is scrolled on the vertical
+// axis.
 type ScrollY struct {
 	// Vertical scroll offset.
 	Off int

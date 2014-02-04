@@ -264,7 +264,7 @@ func (key Key) String() string {
 	return fmt.Sprintf("[unknown key: %d]", int(key))
 }
 
-// KeyPress is triggered when a keyboard key is pressed.
+// A KeyPress event is triggered when a keyboard key is pressed.
 type KeyPress struct {
 	// Keyboard key.
 	Key Key
@@ -272,7 +272,7 @@ type KeyPress struct {
 	Mod Mod
 }
 
-// KeyRelease is triggered when a keyboard key is released.
+// A KeyRelease event is triggered when a keyboard key is released.
 type KeyRelease struct {
 	// Keyboard key.
 	Key Key
@@ -280,7 +280,8 @@ type KeyRelease struct {
 	Mod Mod
 }
 
-// KeyRepeat is triggered when a keyboard key was held down until it repeated.
+// A KeyRepeat event is triggered when a keyboard key was held down until it
+// repeated.
 type KeyRepeat struct {
 	// Keyboard key.
 	Key Key
@@ -288,9 +289,9 @@ type KeyRepeat struct {
 	Mod Mod
 }
 
-// KeyRune is triggered when a unicode character is typed on the keyboard. For
-// instance if `a` and `shift` are held down on the keyboard KeyRune will
-// correspond to 'A'.
+// A KeyRune event is triggered when a unicode character is typed on the
+// keyboard. For instance if `a` and `shift` are held down on the keyboard
+// KeyRune will correspond to 'A'.
 type KeyRune rune
 
 func (r KeyRune) String() string {
