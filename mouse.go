@@ -8,6 +8,9 @@ import (
 // Button corresponds to a mouse button.
 type Button int
 
+// TODO(u): Use a bitfield to represent Button, i.e. use 1<<iota. Both glfw and
+// sdl have to be updated at the same time.
+
 // Mouse buttons.
 const (
 	Button1 Button = iota
@@ -116,6 +119,8 @@ func (enter MouseEnter) String() string {
 // A ScrollX event is triggered when the mouse wheel is scrolled on the
 // horizontal axis.
 type ScrollX struct {
+	// Coordinates of the mouse cursor.
+	image.Point
 	// Horizontal scroll offset.
 	Off int
 	// Bitfield of modifier keys.
@@ -125,6 +130,8 @@ type ScrollX struct {
 // A ScrollY event is triggered when the mouse wheel is scrolled on the vertical
 // axis.
 type ScrollY struct {
+	// Coordinates of the mouse cursor.
+	image.Point
 	// Vertical scroll offset.
 	Off int
 	// Bitfield of modifier keys.
