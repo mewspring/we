@@ -1,4 +1,6 @@
-// Package we specifies commonly used types and constants for window events.
+// Package we specifies commonly used types and constants for window events. An
+// overview of the various event types is given at
+// http://godoc.org/github.com/mewmew/we#Event
 package we
 
 // An Event represents a window, keyboard or mouse event.
