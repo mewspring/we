@@ -1,8 +1,8 @@
 we
 ==
 
-This package specifies the types and constants commonly used for window events.
-It is heavily inspired by [glfw][] and [go.wde][].
+This package specifies commonly used types and constants for window events. It
+is heavily inspired by [glfw][] and [go.wde][].
 
 The goal is to make window event handling interoperate well between various
 packages, even though this may be a [self-defeating purpose][].

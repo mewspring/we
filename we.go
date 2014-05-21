@@ -1,4 +1,4 @@
-// Package we specifies the types and constants commonly used for window events.
+// Package we specifies commonly used types and constants for window events.
 package we
 
 // An Event represents a window, keyboard or mouse event.
