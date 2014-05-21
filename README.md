@@ -16,7 +16,7 @@ Documentation
 
 Documentation provided by GoDoc.
 
-- [we][]: specifies the types and constants commonly used for window events.
+- [we][]: specifies commonly used types and constants for window events.
 
 [we]: http://godoc.org/github.com/mewmew/we
 
