@@ -3,17 +3,15 @@ package we
 import (
 	"fmt"
 	"image"
+	"strings"
 )
 
-// Button corresponds to a mouse button.
+// Button represent a bitfield of mouse buttons.
 type Button int
 
-// TODO(u): Use a bitfield to represent Button, i.e. use 1<<iota. Both glfw and
-// sdl have to be updated at the same time.
-
-// Mouse buttons.
+// Mouse button bitfield values.
 const (
-	Button1 Button = iota
+	Button1 Button = 1 << iota
 	Button2
 	Button3
 	Button4
@@ -28,28 +26,49 @@ const (
 	ButtonMiddle = Button3
 )
 
-// buttonNames maps from Button value to string description.
+// buttonNames maps from Button values to string descriptions.
 var buttonNames = map[Button]string{
 	ButtonLeft:   "[left button]",
-	ButtonRight:  "[right button]",
 	ButtonMiddle: "[middle button]",
+	ButtonRight:  "[right button]",
 }
 
 func (button Button) String() string {
+	if button == 0 {
+		return ""
+	}
+
+	// Exit early if only one mouse button is held down.
 	s, ok := buttonNames[button]
 	if ok {
 		return s
 	}
-	return fmt.Sprintf("[button %d]", int(button)+1)
+
+	var buttons []string
+	if button&ButtonLeft != 0 {
+		buttons = append(buttons, "left button")
+	}
+	if button&ButtonMiddle != 0 {
+		buttons = append(buttons, "middle button")
+	}
+	if button&ButtonRight != 0 {
+		buttons = append(buttons, "right button")
+	}
+	for mask := Button4; mask <= Button8; mask <<= 1 {
+		if button&mask != 0 {
+			buttons = append(buttons, fmt.Sprintf("button %d", mask))
+		}
+	}
+	return "[" + strings.Join(buttons, "+") + "]"
 }
 
-// A MousePress event is triggered when a mouse button is pressed.
+// A MousePress event is triggered when one or more mouse buttons are pressed.
 type MousePress struct {
 	// Coordinates of the mouse cursor.
 	image.Point
-	// Mouse button that was pressed.
+	// Bitfield of pressed mouse buttons.
 	Button Button
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
 }
 
@@ -58,13 +77,13 @@ func (e MousePress) String() string {
 	return fmt.Sprintf("{%v %v %v}", e.Point, e.Button, e.Mod)
 }
 
-// A MouseRelease event is triggered when a mouse button is released.
+// A MouseRelease event is triggered when one or more mouse buttons are released.
 type MouseRelease struct {
 	// Coordinates of the mouse cursor.
 	image.Point
-	// Mouse button that was released.
+	// Bitfield of released mouse buttons.
 	Button Button
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
 }
 
@@ -88,15 +107,15 @@ func (e MouseMove) String() string {
 }
 
 // A MouseDrag event is triggered when the mouse is moved from one location to
-// another while a mouse button is held down.
+// another while one or more mouse buttons are held down.
 type MouseDrag struct {
 	// Coordinates of the mouse cursor.
 	image.Point
 	// Coordinates of the mouse cursor at the beginning of the drag event.
 	From image.Point
-	// Mouse button that was held down.
+	// Bitfield of mouse buttons that were held down.
 	Button Button
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
 }
 
@@ -123,8 +142,13 @@ type ScrollX struct {
 	image.Point
 	// Horizontal scroll offset.
 	Off int
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
+}
+
+func (e ScrollX) String() string {
+	// Override the embedded String method of image.Point.
+	return fmt.Sprintf("{%v %v %v}", e.Point, e.Off, e.Mod)
 }
 
 // A ScrollY event is triggered when the mouse wheel is scrolled on the vertical
@@ -134,6 +158,11 @@ type ScrollY struct {
 	image.Point
 	// Vertical scroll offset.
 	Off int
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
+}
+
+func (e ScrollY) String() string {
+	// Override the embedded String method of image.Point.
+	return fmt.Sprintf("{%v %v %v}", e.Point, e.Off, e.Mod)
 }

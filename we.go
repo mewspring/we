@@ -12,19 +12,19 @@ package we
 // Keyboard events
 //
 // The following keyboard events are defined by this package.
-//    http://godoc.org/github.com/mewmew/we/#KeyPress
-//    http://godoc.org/github.com/mewmew/we/#KeyRelease
-//    http://godoc.org/github.com/mewmew/we/#KeyRepeat
-//    http://godoc.org/github.com/mewmew/we/#KeyRune
+//    http://godoc.org/github.com/mewmew/we#KeyPress
+//    http://godoc.org/github.com/mewmew/we#KeyRelease
+//    http://godoc.org/github.com/mewmew/we#KeyRepeat
+//    http://godoc.org/github.com/mewmew/we#KeyRune
 //
 // Mouse events
 //
 // The following mouse events are defined by this package.
-//    http://godoc.org/github.com/mewmew/we/#MousePress
-//    http://godoc.org/github.com/mewmew/we/#MouseRelease
-//    http://godoc.org/github.com/mewmew/we/#MouseMove
-//    http://godoc.org/github.com/mewmew/we/#MouseDrag
-//    http://godoc.org/github.com/mewmew/we/#MouseEnter
-//    http://godoc.org/github.com/mewmew/we/#ScrollX
-//    http://godoc.org/github.com/mewmew/we/#ScrollY
+//    http://godoc.org/github.com/mewmew/we#MousePress
+//    http://godoc.org/github.com/mewmew/we#MouseRelease
+//    http://godoc.org/github.com/mewmew/we#MouseMove
+//    http://godoc.org/github.com/mewmew/we#MouseDrag
+//    http://godoc.org/github.com/mewmew/we#MouseEnter
+//    http://godoc.org/github.com/mewmew/we#ScrollX
+//    http://godoc.org/github.com/mewmew/we#ScrollY
 type Event interface{}

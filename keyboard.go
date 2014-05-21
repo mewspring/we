@@ -5,10 +5,10 @@ import (
 	"strings"
 )
 
-// Mod corresponds to a bitfield of modifier keys.
+// Mod represent a bitfield of key modifiers.
 type Mod int
 
-// Modifier key bitfield values.
+// Key modifier bitfield values.
 const (
 	// ModShift means one or more Shift keys were held down.
 	ModShift Mod = 1 << iota
@@ -261,14 +261,14 @@ func (key Key) String() string {
 	if key >= KeyApostrophe && key <= KeyGraveAccent {
 		return string(key)
 	}
-	return fmt.Sprintf("[unknown key: %d]", int(key))
+	return fmt.Sprintf("[unknown key: %d]", key)
 }
 
 // A KeyPress event is triggered when a keyboard key is pressed.
 type KeyPress struct {
 	// Keyboard key.
 	Key Key
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
 }
 
@@ -276,7 +276,7 @@ type KeyPress struct {
 type KeyRelease struct {
 	// Keyboard key.
 	Key Key
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
 }
 
@@ -285,7 +285,7 @@ type KeyRelease struct {
 type KeyRepeat struct {
 	// Keyboard key.
 	Key Key
-	// Bitfield of modifier keys.
+	// Bitfield of key modifiers.
 	Mod Mod
 }
 
