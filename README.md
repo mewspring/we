@@ -1,6 +1,10 @@
 we
 ==
 
+[![Build Status](https://travis-ci.org/mewmew/we.svg?branch=master)](https://travis-ci.org/mewmew/we)
+[![Coverage Status](https://img.shields.io/coveralls/mewmew/we.svg)](https://coveralls.io/r/mewmew/we?branch=master)
+[![GoDoc](https://godoc.org/github.com/mewmew/we?status.svg)](https://godoc.org/github.com/mewmew/we)
+
 This package specifies commonly used types and constants for window events. It
 is heavily inspired by [glfw][] and [go.wde][].
 
