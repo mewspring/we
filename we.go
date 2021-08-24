@@ -1,6 +1,6 @@
 // Package we specifies commonly used types and constants for window events. An
 // overview of the various event types is given at
-// http://godoc.org/github.com/mewmew/we#Event
+// http://pkg.go.dev/github.com/mewspring/we#Event
 package we
 
 // An Event represents a window, keyboard or mouse event.
@@ -8,25 +8,28 @@ package we
 // Window events
 //
 // The following window events are defined by this package.
-//    http://godoc.org/github.com/mewmew/we#Close
-//    http://godoc.org/github.com/mewmew/we#Resize
+//
+//    http://pkg.go.dev/github.com/mewspring/we#Close
+//    http://pkg.go.dev/github.com/mewspring/we#Resize
 //
 // Keyboard events
 //
 // The following keyboard events are defined by this package.
-//    http://godoc.org/github.com/mewmew/we#KeyPress
-//    http://godoc.org/github.com/mewmew/we#KeyRelease
-//    http://godoc.org/github.com/mewmew/we#KeyRepeat
-//    http://godoc.org/github.com/mewmew/we#KeyRune
+//
+//    http://pkg.go.dev/github.com/mewspring/we#KeyPress
+//    http://pkg.go.dev/github.com/mewspring/we#KeyRelease
+//    http://pkg.go.dev/github.com/mewspring/we#KeyRepeat
+//    http://pkg.go.dev/github.com/mewspring/we#KeyRune
 //
 // Mouse events
 //
 // The following mouse events are defined by this package.
-//    http://godoc.org/github.com/mewmew/we#MousePress
-//    http://godoc.org/github.com/mewmew/we#MouseRelease
-//    http://godoc.org/github.com/mewmew/we#MouseMove
-//    http://godoc.org/github.com/mewmew/we#MouseDrag
-//    http://godoc.org/github.com/mewmew/we#MouseEnter
-//    http://godoc.org/github.com/mewmew/we#ScrollX
-//    http://godoc.org/github.com/mewmew/we#ScrollY
+//
+//    http://pkg.go.dev/github.com/mewspring/we#MousePress
+//    http://pkg.go.dev/github.com/mewspring/we#MouseRelease
+//    http://pkg.go.dev/github.com/mewspring/we#MouseMove
+//    http://pkg.go.dev/github.com/mewspring/we#MouseDrag
+//    http://pkg.go.dev/github.com/mewspring/we#MouseEnter
+//    http://pkg.go.dev/github.com/mewspring/we#ScrollX
+//    http://pkg.go.dev/github.com/mewspring/we#ScrollY
 type Event interface{}

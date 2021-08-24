@@ -261,7 +261,7 @@ func (key Key) String() string {
 	if key >= KeyApostrophe && key <= KeyGraveAccent {
 		return string(key)
 	}
-	return fmt.Sprintf("[unknown key: %d]", key)
+	return fmt.Sprintf("[unknown key: %d]", int(key))
 }
 
 // A KeyPress event is triggered when a keyboard key is pressed.
