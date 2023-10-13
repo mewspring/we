@@ -18,6 +18,9 @@ const (
 	ModAlt
 	// ModSuper means one or more Super keys were held down.
 	ModSuper
+
+	ModFirst = ModShift
+	ModLast  = ModSuper
 )
 
 func (mod Mod) String() string {
