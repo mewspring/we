@@ -5,31 +5,31 @@ package we
 
 // An Event represents a window, keyboard or mouse event.
 //
-// Window events
+// # Window events
 //
 // The following window events are defined by this package.
 //
-//    http://pkg.go.dev/github.com/mewspring/we#Close
-//    http://pkg.go.dev/github.com/mewspring/we#Resize
+//	http://pkg.go.dev/github.com/mewspring/we#Close
+//	http://pkg.go.dev/github.com/mewspring/we#Resize
 //
-// Keyboard events
+// # Keyboard events
 //
 // The following keyboard events are defined by this package.
 //
-//    http://pkg.go.dev/github.com/mewspring/we#KeyPress
-//    http://pkg.go.dev/github.com/mewspring/we#KeyRelease
-//    http://pkg.go.dev/github.com/mewspring/we#KeyRepeat
-//    http://pkg.go.dev/github.com/mewspring/we#KeyRune
+//	http://pkg.go.dev/github.com/mewspring/we#KeyPress
+//	http://pkg.go.dev/github.com/mewspring/we#KeyRelease
+//	http://pkg.go.dev/github.com/mewspring/we#KeyRepeat
+//	http://pkg.go.dev/github.com/mewspring/we#KeyRune
 //
-// Mouse events
+// # Mouse events
 //
 // The following mouse events are defined by this package.
 //
-//    http://pkg.go.dev/github.com/mewspring/we#MousePress
-//    http://pkg.go.dev/github.com/mewspring/we#MouseRelease
-//    http://pkg.go.dev/github.com/mewspring/we#MouseMove
-//    http://pkg.go.dev/github.com/mewspring/we#MouseDrag
-//    http://pkg.go.dev/github.com/mewspring/we#MouseEnter
-//    http://pkg.go.dev/github.com/mewspring/we#ScrollX
-//    http://pkg.go.dev/github.com/mewspring/we#ScrollY
+//	http://pkg.go.dev/github.com/mewspring/we#MousePress
+//	http://pkg.go.dev/github.com/mewspring/we#MouseRelease
+//	http://pkg.go.dev/github.com/mewspring/we#MouseMove
+//	http://pkg.go.dev/github.com/mewspring/we#MouseDrag
+//	http://pkg.go.dev/github.com/mewspring/we#MouseEnter
+//	http://pkg.go.dev/github.com/mewspring/we#ScrollX
+//	http://pkg.go.dev/github.com/mewspring/we#ScrollY
 type Event interface{}
